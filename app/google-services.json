@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "892397052549",
+    "project_id": "projeto---sal-o-de-beleza",
+    "storage_bucket": "projeto---sal-o-de-beleza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892397052549:android:f61195d117a19ccef47fec",
+        "android_client_info": {
+          "package_name": "com.example.projeto_salaostar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892397052549-61i70iu8sardt26npummi8o58qkkp234.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0xYciuR_4smhuiF1Cu2EhXwzdBOguz-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892397052549-61i70iu8sardt26npummi8o58qkkp234.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

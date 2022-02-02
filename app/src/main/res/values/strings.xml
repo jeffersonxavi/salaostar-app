@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Projeto - Salão de beleza</string>
+    <string name="entrar">Entrar</string>
+    <string name="IrTelaCadastrar">Cadastrar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="voltarTelaCadastrar">Voltar</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="nomeExemplo">Beltrano Ciclano</string>
+    <string name="emailExemplo">exemplo@gmail.com</string>
+    <string name="senhaExemplo">1234</string>
+</resources>
