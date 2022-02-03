@@ -1,5 +1,10 @@
 package com.example.projeto_salodebeleza;
 
+import static android.os.Build.ID;
+import static android.provider.MediaStore.MediaColumns.TITLE;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
@@ -9,6 +14,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,18 +22,41 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class Agendamento extends AppCompatActivity {
 
-    private Button data;
-    private Button consulta;
-    private Button botaoEnviar;
-    private TextView textoResultado;
+
+    private TextView valores;
+
+    private TextView total;
 
 
-    private RadioGroup radioGroup;
-    private RadioButton ButtonEscolhido;
-    private TextView resultadoHorarioEscolhido;
+    String usuarioID;
+
+    private FirebaseAuth mAuth;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,26 +65,20 @@ public class Agendamento extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        //data
-        data = findViewById(R.id.idData);
-        botaoEnviar = findViewById(R.id.btnAgendamentoConfirmar);
-        textoResultado = findViewById(R.id.idresData);
-
-        //consulta
-        consulta = findViewById(R.id.idConsultarAgenda);
-
-        //horario
-        radioGroup = findViewById(R.id.radioGroup);
-        resultadoHorarioEscolhido = findViewById(R.id.idHorario);
 
 
-        ImageView telaSalao = findViewById(R.id.idTelaAgenda);
+        //total
+        total = findViewById(R.id.idTotal);
+        valores = findViewById(R.id.textView13);
+
+
+        ImageView telaAgenda = findViewById(R.id.idTelaAgenda);
         ImageView telaPerfil = findViewById(R.id.idTelaPerfil);
 
-        telaSalao.setOnClickListener(new View.OnClickListener() {
+        telaAgenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getApplicationContext(), Principal.class);
+                Intent it = new Intent(getApplicationContext(), Agenda.class);
                 startActivity(it);
             }
         });
@@ -68,53 +91,33 @@ public class Agendamento extends AppCompatActivity {
             }
         });
 
-        botaoEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String dataesc = data.getText().toString();
-                if (dataesc.isEmpty()) {
-                    textoResultado.setText("Por favor, escolha uma data.");
-                } else {
-                    textoResultado.setText("Data: " + dataesc.toString());
-                }
 
-                int idRadioButtonPreferido = radioGroup.getCheckedRadioButtonId();
-                if (idRadioButtonPreferido > 0) {
-                    ButtonEscolhido = findViewById(idRadioButtonPreferido);
-                    String dispositvos = "Horário escolhido: " + ButtonEscolhido.getText().toString();
-                    resultadoHorarioEscolhido.setText(dispositvos);
-                } else {
-                    resultadoHorarioEscolhido.setText("Por favor, escolha um horário.");
-                }
-
-                Intent it = new Intent(getApplicationContext(), Agenda.class);
-                startActivity(it);
-
-            }
-        });
-
-        data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_INSERT)
-                        .setData(CalendarContract.Events.CONTENT_URI)
-                        .putExtra(CalendarContract.Events.TITLE, "Atendimento")
-                        .putExtra(CalendarContract.Events.DESCRIPTION, "Teste")
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Alto Caiçara")
-                        .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-                        .putExtra(Intent.EXTRA_EMAIL, "jefinrc18@gmail.com")
-                        .putExtra(CalendarContract.Events.ALL_DAY, "false");
-
-                startActivity(intent);
-
-            }
-        });
-
-        consulta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://calendar.google.com/calendar/u/1?cid=amVmaW5yYzE4QGdtYWlsLmNvbQ")));
-            }
-        });
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference docRef = db.collection("valores").document(usuarioID);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        total.setText(document.getString("valores"));
+                    } else {
+                        Toast.makeText(Agendamento.this, "Encontrado", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Log.d("TAG", "Falhou em ", task.getException());
+                }
+            }
+        });
+
+    }
+
+
+
+
+
 }

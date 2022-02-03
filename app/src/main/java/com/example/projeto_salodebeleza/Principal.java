@@ -20,6 +20,7 @@ public class Principal extends AppCompatActivity {
 
     private Button botaoSobre;
     private Button botaoContato;
+    private Button botaoAgendamento;
 
     ImageView telaAgenda, telaPerfil;
 
@@ -32,6 +33,7 @@ public class Principal extends AppCompatActivity {
 
         botaoSobre = findViewById(R.id.btnTelaSobre);
         botaoContato = findViewById(R.id.btnTelaContato);
+        botaoAgendamento = findViewById(R.id.btnTelaAgendamento);
         telaAgenda = findViewById(R.id.idTelaAgenda);
         telaPerfil = findViewById(R.id.idTelaPerfil);
 
@@ -65,6 +67,13 @@ public class Principal extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
+            }
+        });
+        botaoAgendamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(), Agendamento.class);
+                startActivity(it);
             }
         });
     }
