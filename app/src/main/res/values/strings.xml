@@ -10,4 +10,16 @@
     <string name="nomeExemplo">Beltrano Ciclano</string>
     <string name="emailExemplo">exemplo@gmail.com</string>
     <string name="senhaExemplo">1234</string>
+    <string name="alterar_foto">Alterar Foto</string>
+    <string name="marque_o_servico_desejado">Marque o serviço desejado:</string>
+    <string name="rua_riquelmes_bairro_atlanta">Rua Riquelmes, Bairro Atlanta</string>
+    <string name="salao_star">Salão Star</string>
+    <string name="_17_00_rs">17,00 R$</string>
+    <string name="_13_00_rs">13,00 R$</string>
+    <string name="_20min">20min</string>
+    <string name="_15_00_rs">15,00 R$</string>
+    <string name="_30min">30min</string>
+    <string name="_45min">45min</string>
+    <string name="ultimo_agendamento">ÚLTIMO AGENDAMENTO:</string>
+    <string name="sair">SAIR</string>
 </resources>

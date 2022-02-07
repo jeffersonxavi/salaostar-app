@@ -49,14 +49,16 @@ public class Principal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(), Perfil.class);
-                startActivity(it);            }
+                startActivity(it);
+            }
         });
 
         botaoSobre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(), TelaSobre.class);
-                startActivity(it);            }
+                startActivity(it);
+            }
         });
 
         botaoContato.setOnClickListener(new View.OnClickListener() {

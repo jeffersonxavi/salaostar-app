@@ -71,8 +71,7 @@ public class Login extends AppCompatActivity {
                             }
                         }
                     });
-                }
-                else{
+                } else {
                     Toast.makeText(Login.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }
             }

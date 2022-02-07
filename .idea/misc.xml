@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/bg_button_foto.xml" value="0.1485" />
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/bg_button_principal.xml" value="0.1675" />
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/btn_desconect.xml" value="0.153" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/ic_calendar.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/ic_contact.xml" value="0.1675" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/ic_eye.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/ic_info.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/ic_perfil.xml" value="0.1675" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/drawable/ic_tesoura.xml" value="0.19444444444444445" />
-        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_agenda.xml" value="0.25" />
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_agenda.xml" value="0.33" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_agendamento.xml" value="0.25" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_barba.xml" value="0.25" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_cadastro.xml" value="0.33" />
@@ -21,7 +26,7 @@
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_perfil.xml" value="0.25" />
         <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_principal.xml" value="0.25" />
-        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_tela_sobre.xml" value="0.5" />
+        <entry key="..\:/Users/jefin/AndroidStudioProjects/ProjetoSalodebeleza/app/src/main/res/layout/activity_tela_sobre.xml" value="0.22" />
       </map>
     </option>
   </component>

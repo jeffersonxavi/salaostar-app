@@ -37,7 +37,7 @@
         android:layout_width="370dp"
         android:layout_height="462dp"
 
-        android:background="#D6D5D5"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,28 +60,53 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <TextView
             android:id="@+id/idDuracaoTesoura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            style="@style/Widget.AppCompat.TextView.SpinnerItem"
+            android:layout_width="154dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="25dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Duração média: 35m"
+            android:text="Duração média:"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <EditText
+        <TextView
             android:id="@+id/idValorTesoura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            style="@style/Widget.AppCompat.TextView.SpinnerItem"
+            android:layout_width="66dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Valor: 15,00 R$"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idDuracaoTesoura" />
+            android:text="Valor:"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView11"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="73dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/_45min"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/idDuracaoTesoura"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView21"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="102dp"
+            android:layout_height="32dp"
+            android:text="@string/_17_00_rs"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/idValorTesoura"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -37,22 +37,22 @@
         android:layout_width="370dp"
         android:layout_height="462dp"
 
-        android:background="#D6D5D5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="155dp"
-            android:layout_height="120dp"
+        <Button
+            android:id="@+id/idFoto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/nome6"
+            android:background="@drawable/bg_button_foto"
+            android:text="foto"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_perfil" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/email7"
@@ -80,7 +80,7 @@
             app:layout_constraintBottom_toTopOf="@+id/idPerfilNome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
         <TextView
             android:id="@+id/idPerfilEmail"
@@ -111,16 +111,39 @@
             android:id="@+id/btnSairID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="138dp"
-            android:layout_marginTop="47dp"
-            android:layout_marginEnd="138dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/black"
-            android:text="DESCONECTAR-SE"
+            android:text="@string/sair"
             android:textColor="@color/white"
             android:textColorHint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/idImgFoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_perfil"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/nome6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idPerfilEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/idFoto"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/alterar_foto"
+            app:layout_constraintBottom_toTopOf="@+id/nome6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idImgFoto" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView

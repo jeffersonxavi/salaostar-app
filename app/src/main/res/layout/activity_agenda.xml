@@ -11,7 +11,7 @@
         android:layout_width="370dp"
         android:layout_height="462dp"
 
-        android:background="#D6D5D5"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,11 +21,12 @@
         <Button
             android:id="@+id/btnTelaTesoura"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/teal_700"
             android:text="CORTE TESOURA"
+
             android:textColor="@color/white"
             app:layout_constraintBaseline_toBaselineOf="@+id/idCorteTesoura"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,10 +35,11 @@
         <Button
             android:id="@+id/btnTelaMaquina"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/teal_700"
+
             android:text="CORTE MÁQUINA"
             android:textColor="@color/white"
             app:layout_constraintBaseline_toBaselineOf="@+id/idCorteMaquina"
@@ -47,11 +49,12 @@
 
         <Button
             android:id="@+id/btnTelaBarba"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/teal_700"
             android:text="BARBA"
             android:textColor="@color/white"
             app:layout_constraintBaseline_toBaselineOf="@+id/idCorteBarba"
@@ -63,9 +66,11 @@
             android:id="@+id/idConsultarAgenda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="24dp"
+            android:backgroundTint="@android:color/transparent"
             android:text="Consultar Agenda"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/btnAgendaConfirmar"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -76,9 +81,9 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="17dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/black"
             android:text="REALIZAR AGENDAMENTO"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -88,25 +93,37 @@
             android:id="@+id/idCorteTesoura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="52dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnTelaTesoura"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/idCorteMaquina"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnTelaMaquina"
             app:layout_constraintTop_toBottomOf="@+id/idCorteTesoura" />
 
         <CheckBox
             android:id="@+id/idCorteBarba"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnTelaMaquina"
             app:layout_constraintTop_toBottomOf="@+id/idCorteMaquina" />
+
+        <TextView
+            android:id="@+id/textView10"
+            style="@style/Widget.AppCompat.TextView.SpinnerItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/marque_o_servico_desejado"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,61 +1,30 @@
 package com.example.projeto_salodebeleza;
 
-import static android.os.Build.ID;
-import static android.provider.MediaStore.MediaColumns.TITLE;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 public class Agendamento extends AppCompatActivity {
 
 
-    private TextView valores;
-
-    private TextView total;
-
-
-    String usuarioID;
-
+    private TextView agendaServico;
     private FirebaseAuth mAuth;
-
+    String usuarioID;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
-
-
 
 
     @Override
@@ -66,10 +35,8 @@ public class Agendamento extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-
-        //total
-        total = findViewById(R.id.idTotal);
-        valores = findViewById(R.id.textView13);
+        //Ultimo agendamento
+        agendaServico = findViewById(R.id.idAgendamento);
 
 
         ImageView telaAgenda = findViewById(R.id.idTelaAgenda);
@@ -93,6 +60,7 @@ public class Agendamento extends AppCompatActivity {
 
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -104,7 +72,7 @@ public class Agendamento extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        total.setText(document.getString("valores"));
+                        agendaServico.setText(document.getString("valores"));
                     } else {
                         Toast.makeText(Agendamento.this, "Encontrado", Toast.LENGTH_SHORT).show();
                     }
@@ -115,9 +83,6 @@ public class Agendamento extends AppCompatActivity {
         });
 
     }
-
-
-
 
 
 }
