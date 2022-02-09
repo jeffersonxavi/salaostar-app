@@ -23,12 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
     //nome
-    private EditText emailLogin;
-    private EditText senhaLogin;
-
-    private Button botaoEntrar;
-    private Button botaoTelaCadastrar;
-
+    private EditText emailLogin, senhaLogin;
+    private Button botaoEntrar, botaoTelaCadastrar;
     private FirebaseAuth mAuth;
 
 
@@ -36,13 +32,12 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
 
-        getSupportActionBar().hide();
         emailLogin = findViewById(R.id.idEmailEntrar);
         senhaLogin = findViewById(R.id.idSenhaEntrar);
-
         botaoEntrar = findViewById(R.id.btnEntrar);
         botaoTelaCadastrar = findViewById(R.id.btnTelaCadastrar);
 

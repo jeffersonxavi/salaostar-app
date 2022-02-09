@@ -27,27 +27,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Agenda extends AppCompatActivity {
-    private CheckBox crtTesoura;
-    private CheckBox crtMaquina;
-    private CheckBox crtBarba;
-
-    private String tesoura = "";
-    private String maquina = "";
-    private String barba = "";
-
-    String usuarioID;
-
-    private Button botaoConsulta, botaoAgendar, botaoCorteMaquina, botaoCorteTesoura, botaoBarba;
 
     ImageView telaSalao, telaPerfil;
-
+    String usuarioID;
+    private CheckBox crtTesoura, crtMaquina, crtBarba;
+    private String tesoura = "", maquina = "", barba = "";
+    private Button botaoConsulta, botaoAgendar, botaoCorteMaquina, botaoCorteTesoura, botaoBarba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenda);
         getSupportActionBar().hide();
-
 
         crtTesoura = findViewById(R.id.idCorteTesoura);
         crtMaquina = findViewById(R.id.idCorteMaquina);
@@ -116,6 +107,7 @@ public class Agenda extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
         botaoCorteTesoura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +115,7 @@ public class Agenda extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
         botaoCorteMaquina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,6 +123,7 @@ public class Agenda extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
         telaPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,6 +131,7 @@ public class Agenda extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
         telaSalao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,7 +143,12 @@ public class Agenda extends AppCompatActivity {
         botaoConsulta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://calendar.google.com/calendar/u/1?cid=amVmaW5yYzE4QGdtYWlsLmNvbQ")));
+                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://calendar.google.com/calendar/u/1?cid=amVmaW5yYzE4QGdtYWlsLmNvbQ")));
+                String url = "https://calendar.google.com/calendar/embed?src=jefinrc18%40gmail.com&ctz=America%2FBahia";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
             }
         });
 

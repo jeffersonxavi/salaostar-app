@@ -30,17 +30,10 @@ import java.util.Map;
 
 public class Cadastro extends AppCompatActivity {
 
-    private EditText nomeCadastro;
-    private EditText emailCadastro;
-    private EditText senhaCadastro;
-    private EditText senhaCadastroConfirmar;
-
-    private Button botaoCadastrar;
-    private Button botaoTelaLogin;
-
-    private FirebaseAuth mAuth;
-
     String usuarioID;
+    private FirebaseAuth mAuth;
+    private EditText nomeCadastro, emailCadastro, senhaCadastro, senhaCadastroConfirmar;
+    private Button botaoTelaLogin, botaoCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

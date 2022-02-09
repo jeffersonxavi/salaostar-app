@@ -18,7 +18,6 @@ public class Barba extends AppCompatActivity {
         setContentView(R.layout.activity_barba);
         getSupportActionBar().hide();
 
-
         ImageView telaAgenda = findViewById(R.id.idTelaAgenda);
         ImageView telaPerfil = findViewById(R.id.idTelaPerfil);
 

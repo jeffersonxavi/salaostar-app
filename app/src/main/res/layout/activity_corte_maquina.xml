@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="25dp"
-            android:background="#000000"
+            android:background="@color/teal_700"
             android:fontFamily="sans-serif-smallcaps"
             android:text="CORTE DE MÁQUINA"
             android:textColor="@color/white"

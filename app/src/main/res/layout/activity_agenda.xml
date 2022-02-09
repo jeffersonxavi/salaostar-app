@@ -67,11 +67,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginBottom="24dp"
             android:backgroundTint="@android:color/transparent"
             android:text="Consultar Agenda"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/btnAgendaConfirmar"
+            app:layout_constraintBottom_toTopOf="@+id/textView23"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -124,6 +123,15 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="343dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="12dp"
+            android:text="@string/verificar_horario"
+            app:layout_constraintBottom_toTopOf="@+id/btnAgendaConfirmar"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

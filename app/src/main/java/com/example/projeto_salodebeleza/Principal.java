@@ -15,14 +15,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Principal extends AppCompatActivity {
 
+    ImageView telaAgenda, telaPerfil;
     private FirebaseAuth mAuth;
-
-
     private Button botaoSobre;
     private Button botaoContato;
     private Button botaoAgendamento;
-
-    ImageView telaAgenda, telaPerfil;
 
 
     @Override

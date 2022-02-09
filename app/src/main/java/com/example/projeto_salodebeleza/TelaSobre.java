@@ -14,9 +14,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class TelaSobre extends AppCompatActivity {
 
-    private TextView botaoSobre;
-
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +21,6 @@ public class TelaSobre extends AppCompatActivity {
         setContentView(R.layout.activity_tela_sobre);
         getSupportActionBar().hide();
 
-        botaoSobre = findViewById(R.id.txtSalão);
         ImageView telaAgenda = findViewById(R.id.idTelaAgenda);
         ImageView telaPerfil = findViewById(R.id.idTelaPerfil);
 

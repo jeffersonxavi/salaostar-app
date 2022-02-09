@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#000000"
+            android:background="@color/teal_700"
             android:fontFamily="sans-serif-smallcaps"
             android:text="BARBA"
             android:textColor="@color/white"

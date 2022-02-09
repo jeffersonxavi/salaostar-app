@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class CorteTesoura extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

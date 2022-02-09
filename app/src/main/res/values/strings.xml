@@ -22,4 +22,6 @@
     <string name="_45min">45min</string>
     <string name="ultimo_agendamento">ÚLTIMO AGENDAMENTO:</string>
     <string name="sair">SAIR</string>
+    <string name="escolher_foto">Escolher Foto</string>
+    <string name="verificar_horario">Antes de realizar o agendamento, consulte a agenda do cabelereiro e verifique se há vaga no horário desejado!</string>
 </resources>

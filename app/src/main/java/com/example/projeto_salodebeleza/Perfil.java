@@ -37,17 +37,14 @@ import java.util.UUID;
 public class Perfil extends AppCompatActivity {
 
     ImageView telaAgenda, telaSalao;
-    private Button btnDeslogar;
-    private ImageView imgFoto, imgFotoPerfil;
-    private TextView nomeUser, emailUser;
-    FirebaseAuth fAuth;
-
-    private Uri ftSelecionaUri;
-
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
-
+    FirebaseAuth fAuth;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     StorageReference storageReference;
+    private Button btnDeslogar;
+    private ImageView imgFoto;
+    private TextView nomeUser, emailUser;
+    private Uri ftSelecionaUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,21 +58,17 @@ public class Perfil extends AppCompatActivity {
         emailUser = findViewById(R.id.idPerfilEmail);
         btnDeslogar = findViewById(R.id.btnSairID);
         imgFoto = findViewById(R.id.idImgFoto);
-        imgFotoPerfil = findViewById(R.id.idTelaPerfil);
 
         fAuth = FirebaseAuth.getInstance();
-
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        StorageReference profileRef = storageReference.child("usuarios/" + fAuth.getCurrentUser().getUid() +"/profile.jpg");
+        StorageReference profileRef = storageReference.child("usuarios/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(imgFoto);
-
             }
         });
-
 
         telaSalao.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,16 +108,15 @@ public class Perfil extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 150){
+        if (requestCode == 150) {
             ftSelecionaUri = data.getData();
             imgFoto.setImageURI(ftSelecionaUri);
             salvarFoto();
         }
     }
 
-
     private void salvarFoto() {
-        final StorageReference ref = storageReference.child("usuarios/" + fAuth.getCurrentUser().getUid() +"/profile.jpg");
+        final StorageReference ref = storageReference.child("usuarios/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
         ref.putFile(ftSelecionaUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -140,19 +132,14 @@ public class Perfil extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("Teste", e.getMessage(), e);
+                        Log.e("Falhou", e.getMessage(), e);
                     }
                 });
     }
 
-
-
-
-
     @Override
     protected void onStart() {
         super.onStart();
-
         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference documentReference = db.collection("usuarios").document(usuarioID);

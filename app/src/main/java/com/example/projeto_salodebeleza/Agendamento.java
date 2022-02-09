@@ -20,25 +20,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Agendamento extends AppCompatActivity {
 
-
-    private TextView agendaServico;
-    private FirebaseAuth mAuth;
     String usuarioID;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+    private TextView agendaServico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agendamento);
-
         getSupportActionBar().hide();
-
 
         //Ultimo agendamento
         agendaServico = findViewById(R.id.idAgendamento);
-
-
         ImageView telaAgenda = findViewById(R.id.idTelaAgenda);
         ImageView telaPerfil = findViewById(R.id.idTelaPerfil);
 
@@ -57,8 +50,6 @@ public class Agendamento extends AppCompatActivity {
                 startActivity(it);
             }
         });
-
-
     }
 
     @Override
@@ -74,15 +65,12 @@ public class Agendamento extends AppCompatActivity {
                     if (document.exists()) {
                         agendaServico.setText(document.getString("valores"));
                     } else {
-                        Toast.makeText(Agendamento.this, "Encontrado", Toast.LENGTH_SHORT).show();
+                        Log.d("db", "Sucesso ao carregar os dados.");
                     }
                 } else {
                     Log.d("TAG", "Falhou em ", task.getException());
                 }
             }
         });
-
     }
-
-
 }
